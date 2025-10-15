@@ -1,0 +1,254 @@
+.infinity-castle-desktop-wallpaper {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: auto;
+  height: auto;
+  max-width: auto;
+  max-height: auto;
+  /* Stärkerer Fade-Effekt nach unten */
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
+}
+
+
+.douma-title-text {
+  position: absolute;
+  bottom: -5250px; /* Unter dem Akaza Bild */
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(180, 120, 0); /* Dunkleres Gelb */
+  font-family: 'Impact', sans-serif;
+  font-size: 10em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  white-space: nowrap; /* Text bleibt in einer Linie */
+  opacity: 0.7; /* Gleiche Durchsichtigkeit */
+  /* Weniger Leuchten */
+  text-shadow:
+    0 0 5px rgba(180, 120, 0, 0.3),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+
+.akaza-title-text {
+  position: absolute;
+  bottom: -950px; /* Unter dem ersten Bild */
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(1, 172, 240);
+  font-family: 'Impact', sans-serif;
+  font-size: 10em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  white-space: nowrap; /* Text bleibt in einer Linie */
+  opacity: 0.5; /* Macht den Text durchsichtig */
+  text-shadow:
+    0 0 5px rgba(240, 125, 1, 0.3),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+
+.kokushibo-title-text {
+  position: absolute;
+  bottom: -9800px; /* Unter dem Douma Bild */
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(255, 0, 0); 
+  font-family: 'Impact', sans-serif;
+  font-size: 10em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  white-space: nowrap; /* Text bleibt in einer Linie */
+  opacity: 0.7; /* Gleiche Durchsichtigkeit */
+  text-shadow:
+    0 0 5px rgba(100, 100, 100, 0.3),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Glow-Animation entfernt für weniger Leuchten */
+
+.akaza-eye-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 200px auto 0;
+  text-align: center;
+  z-index: 5;
+  padding: 50px 0;
+  flex: auto;
+  
+  /* Stärkerer Fade-Effekt nach unten - betrifft alles in diesem Container */
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+}
+
+.akaza-eye-img {
+  width: 100%;
+  height: auto;
+  max-height: 4200px; /* Begrenzt die Höhe */
+  object-fit: cover;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+  flex: auto;
+}
+
+
+
+/* Douma Eye Section - Gleiche Styles wie Akaza */
+.douma-eye-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 200px auto 0;
+  text-align: center;
+  z-index: 5;
+  padding: 50px 0;
+  flex: auto;
+  
+  /* Gleicher Fade-Effekt wie bei Akaza - betrifft alles in diesem Container */
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+}
+
+.douma-eye-img {
+  width: 100%;
+  height: auto;
+  max-height: 4200px; /* Begrenzt die Höhe */
+  object-fit: cover;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+  flex: auto;
+}
+
+
+
+/* Kokushibo Eye Section - Gleiche Styles wie die anderen Eye Sections */
+.kokushibo-eye-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 200px auto 0;
+  text-align: center;
+  z-index: 5;
+  padding: 50px 0;
+  flex: auto;
+  
+  /* Gleicher Fade-Effekt wie bei Akaza und Douma */
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+}
+
+.kokushibo-eye-img {
+  width: 100%;
+  height: auto;
+  max-height: 4200px; /* Begrenzt die Höhe */
+  object-fit: cover;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
+  flex: auto;
+}
+
+
+
+/* Container für die bewegenden Bilder */
+.moving-images-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Einzelne bewegende Bilder */
+.moving-image {
+  position: absolute;
+  bottom: 100px;
+  width: 800px;
+  height: 1400px;
+  object-fit: cover;
+  border-radius: 30px;
+  border: 8px solid black;
+  box-shadow: 
+    0 0 30px rgba(0, 0, 0, 0.9),
+    0 15px 50px rgba(0, 0, 0, 0.8),
+    inset 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: moveLeftToRight 30s linear infinite;
+}
+
+/* Verschiedene Startpositionen für jedes Bild */
+.moving-image:nth-child(1) {
+  animation-delay: 0s;
+  left: -800px;
+}
+
+.moving-image:nth-child(2) {
+  animation-delay: -5s;
+  left: -800px;
+}
+
+.moving-image:nth-child(3) {
+  animation-delay: -10s;
+  left: -800px;
+}
+
+.moving-image:nth-child(4) {
+  animation-delay: -15s;
+  left: -800px;
+}
+
+.moving-image:nth-child(5) {
+  animation-delay: -20s;
+  left: -800px;
+}
+
+.moving-image:nth-child(6) {
+  animation-delay: -25s;
+  left: -800px;
+}
+
+.moving-image:nth-child(7) {
+  animation-delay: -30s;
+  left: -800px;
+}
+
+.moving-image:nth-child(8) {
+  animation-delay: -35s;
+  left: -800px;
+}
+
+/* Animation von links nach rechts */
+@keyframes moveLeftToRight {
+  0% {
+    left: -800px;
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-20px);
+  }
+  90% {
+    transform: translateY(-20px);
+  }
+  100% {
+    left: calc(100% + 800px);
+    transform: translateY(0);
+  }
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  min-height: 430vh; /* Seite ist 3x so hoch wie Bildschirm - ermöglicht Scrolling */
+}
+
+
