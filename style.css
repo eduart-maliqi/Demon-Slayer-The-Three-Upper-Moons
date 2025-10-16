@@ -1,164 +1,143 @@
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Kein seitliches Scrollen */
+}
+
+img {
+  display: block;
+}
+
 .infinity-castle-desktop-wallpaper {
+  position: relative;
   margin: 0;
   padding: 0;
   border: 0;
-  width: auto;
-  height: auto;
-  max-width: auto;
-  max-height: auto;
-  /* Stärkerer Fade-Effekt nach unten */
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%);
 }
 
-
-.douma-title-text {
+/* Weicher Fade vom Wallpaper ins Schwarz */
+.infinity-castle-desktop-wallpaper::after {
+  content: "";
   position: absolute;
-  bottom: -5250px; /* Unter dem Akaza Bild */
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgb(180, 120, 0); /* Dunkleres Gelb */
-  font-family: 'Impact', sans-serif;
-  font-size: 10em;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  white-space: nowrap; /* Text bleibt in einer Linie */
-  opacity: 0.7; /* Gleiche Durchsichtigkeit */
-  /* Weniger Leuchten */
-  text-shadow:
-    0 0 5px rgba(180, 120, 0, 0.3),
-    2px 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.6) 50%, black);
+  pointer-events: none;
 }
 
+
+
+/* Gemeinsame Styles für alle Titel - Grösse passt sich der Bildschirmbreite an */
+.akaza-title-text,
+.douma-title-text,
+.kokushibo-title-text {
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 16px;
+  text-align: center;
+  font-family: 'Impact', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.akaza-title-text h1,
+.douma-title-text h1,
+.kokushibo-title-text h1 {
+  /* Titel liegt auf den weichen Übergängen davor und danach - kleiner als die Titelhöhe, damit sich die Bilder nicht überdecken */
+  margin: -0.2em 0 -0.35em;
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-weight: bold;
+  line-height: 1;
+  text-wrap: balance; /* Bricht bei Bedarf schön auf zwei Zeilen um */
+  overflow-wrap: break-word;
+}
 
 .akaza-title-text {
-  position: absolute;
-  bottom: -950px; /* Unter dem ersten Bild */
-  left: 50%;
-  transform: translateX(-50%);
   color: rgb(1, 172, 240);
-  font-family: 'Impact', sans-serif;
-  font-size: 10em;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  white-space: nowrap; /* Text bleibt in einer Linie */
   opacity: 0.5; /* Macht den Text durchsichtig */
   text-shadow:
     0 0 5px rgba(240, 125, 1, 0.3),
     2px 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 10;
 }
 
+.douma-title-text {
+  color: rgb(180, 120, 0); /* Dunkleres Gelb */
+  opacity: 0.7;
+  text-shadow:
+    0 0 5px rgba(180, 120, 0, 0.3),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
 .kokushibo-title-text {
-  position: absolute;
-  bottom: -9800px; /* Unter dem Douma Bild */
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgb(255, 0, 0); 
-  font-family: 'Impact', sans-serif;
-  font-size: 10em;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  white-space: nowrap; /* Text bleibt in einer Linie */
-  opacity: 0.7; /* Gleiche Durchsichtigkeit */
+  color: rgb(255, 0, 0);
+  opacity: 0.7;
   text-shadow:
     0 0 5px rgba(100, 100, 100, 0.3),
     2px 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 10;
-}
-
-/* Glow-Animation entfernt für weniger Leuchten */
-
-.akaza-eye-section {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  margin: 200px auto 0;
-  text-align: center;
-  z-index: 5;
-  padding: 50px 0;
-  flex: auto;
-  
-  /* Stärkerer Fade-Effekt nach unten - betrifft alles in diesem Container */
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-}
-
-.akaza-eye-img {
-  width: 100%;
-  height: auto;
-  max-height: 4200px; /* Begrenzt die Höhe */
-  object-fit: cover;
-  mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
-  flex: auto;
 }
 
 
 
-/* Douma Eye Section - Gleiche Styles wie Akaza */
-.douma-eye-section {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  margin: 200px auto 0;
-  text-align: center;
-  z-index: 5;
-  padding: 50px 0;
-  flex: auto;
-  
-  /* Gleicher Fade-Effekt wie bei Akaza - betrifft alles in diesem Container */
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-}
-
-.douma-eye-img {
-  width: 100%;
-  height: auto;
-  max-height: 4200px; /* Begrenzt die Höhe */
-  object-fit: cover;
-  mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
-  flex: auto;
-}
-
-
-
-/* Kokushibo Eye Section - Gleiche Styles wie die anderen Eye Sections */
+/* Gemeinsame Styles für alle Eye Sections */
+.akaza-eye-section,
+.douma-eye-section,
 .kokushibo-eye-section {
   position: relative;
   width: 100%;
-  max-width: 100%;
-  margin: 200px auto 0;
-  text-align: center;
   z-index: 5;
-  padding: 50px 0;
-  flex: auto;
-  
-  /* Gleicher Fade-Effekt wie bei Akaza und Douma */
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
 }
 
+.akaza-eye-img,
+.douma-eye-img,
 .kokushibo-eye-img {
   width: 100%;
   height: auto;
-  max-height: 4200px; /* Begrenzt die Höhe */
+  max-height: 100vh; /* Nie höher als der Bildschirm */
   object-fit: cover;
-  mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
-  flex: auto;
+  object-position: center 70%; /* Auge bleibt sichtbar */
+}
+
+/* Weicher Fade oben und unten - Bilder gehen sanft ins Schwarz über */
+.akaza-eye-section::before,
+.douma-eye-section::before,
+.kokushibo-eye-section::before,
+.akaza-eye-section::after,
+.douma-eye-section::after,
+.kokushibo-eye-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.akaza-eye-section::before,
+.douma-eye-section::before,
+.kokushibo-eye-section::before {
+  top: -1px;
+  background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.6) 50%, black);
+}
+
+.akaza-eye-section::after,
+.douma-eye-section::after,
+.kokushibo-eye-section::after {
+  bottom: -1px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.6) 50%, black);
 }
 
 
 
 /* Container für die bewegenden Bilder */
 .moving-images-container {
+  --moving-image-width: clamp(80px, 16vw, 240px);
+  --moving-image-offset: calc(var(--moving-image-width) + 120px); /* Startpunkt ausserhalb des Bildschirms - genug Weg, damit sich die Bilder nicht überlappen */
   position: absolute;
   bottom: 0;
   left: 0;
@@ -169,67 +148,43 @@
   pointer-events: none;
 }
 
-/* Einzelne bewegende Bilder */
+/* Einzelne bewegende Bilder - Grösse passt sich der Bildschirmbreite an */
 .moving-image {
   position: absolute;
-  bottom: 100px;
-  width: 800px;
-  height: 1400px;
+  bottom: clamp(16px, 5vw, 80px);
+  left: calc(-1 * var(--moving-image-offset));
+  width: var(--moving-image-width);
+  aspect-ratio: 300 / 530;
+  height: auto;
   object-fit: cover;
-  border-radius: 30px;
-  border: 8px solid black;
-  box-shadow: 
+  border-radius: clamp(10px, 1.5vw, 20px);
+  border: clamp(2px, 0.4vw, 5px) solid black;
+  box-shadow:
     0 0 30px rgba(0, 0, 0, 0.9),
     0 15px 50px rgba(0, 0, 0, 0.8),
     inset 0 0 20px rgba(0, 0, 0, 0.5);
-  animation: moveLeftToRight 30s linear infinite;
+  animation: moveLeftToRight 40s linear infinite; /* 8 Bilder x 5s Abstand */
 }
 
 /* Verschiedene Startpositionen für jedes Bild */
-.moving-image:nth-child(1) {
-  animation-delay: 0s;
-  left: -800px;
-}
+.moving-image:nth-child(1) { animation-delay: 0s; }
+.moving-image:nth-child(2) { animation-delay: -5s; }
+.moving-image:nth-child(3) { animation-delay: -10s; }
+.moving-image:nth-child(4) { animation-delay: -15s; }
+.moving-image:nth-child(5) { animation-delay: -20s; }
+.moving-image:nth-child(6) { animation-delay: -25s; }
+.moving-image:nth-child(7) { animation-delay: -30s; }
+.moving-image:nth-child(8) { animation-delay: -35s; }
 
-.moving-image:nth-child(2) {
-  animation-delay: -5s;
-  left: -800px;
-}
-
-.moving-image:nth-child(3) {
-  animation-delay: -10s;
-  left: -800px;
-}
-
-.moving-image:nth-child(4) {
-  animation-delay: -15s;
-  left: -800px;
-}
-
-.moving-image:nth-child(5) {
-  animation-delay: -20s;
-  left: -800px;
-}
-
-.moving-image:nth-child(6) {
-  animation-delay: -25s;
-  left: -800px;
-}
-
-.moving-image:nth-child(7) {
-  animation-delay: -30s;
-  left: -800px;
-}
-
-.moving-image:nth-child(8) {
-  animation-delay: -35s;
-  left: -800px;
+/* Douma hat nur 6 Bilder - kürzere Animation, damit keine Lücke entsteht */
+.douma-eye-section .moving-image {
+  animation-duration: 30s;
 }
 
 /* Animation von links nach rechts */
 @keyframes moveLeftToRight {
   0% {
-    left: -800px;
+    left: calc(-1 * var(--moving-image-offset));
     transform: translateY(0);
   }
   10% {
@@ -239,16 +194,7 @@
     transform: translateY(-20px);
   }
   100% {
-    left: calc(100% + 800px);
+    left: calc(100% + var(--moving-image-offset));
     transform: translateY(0);
   }
 }
-
-body {
-  background-color: black;
-  margin: 0;
-  padding: 0;
-  min-height: 430vh; /* Seite ist 3x so hoch wie Bildschirm - ermöglicht Scrolling */
-}
-
-

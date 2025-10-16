@@ -18,3 +18,14 @@ Simply open `index.html` in your web browser.
 ## Images
 
 All images are sourced from various online resources and are for aesthetic purposes only.
+## Project Structure
+
+```
+├── index.html
+├── style.css
+└── images/
+    ├── background/   # Infinity Castle wallpaper
+    ├── akaza/        # Upper Moon 3
+    ├── douma/        # Upper Moon 2
+    └── kokushibo/    # Upper Moon 1
+```
